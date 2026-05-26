@@ -1,0 +1,27 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <h1>
+            <input name="name" type="text" value="{{actor.name}}" placeholder="Nome do Personagem"/>
+        </h1>
+        <div class="header-status">
+            <label>PV:</label>
+            <input name="system.status.pv.value" type="text" value="{{system.status.pv.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input name="system.status.pv.max" type="text" value="{{system.status.pv.max}}" data-dtype="Number"/>
+        </div>
+    </header>
+
+    <section class="sheet-body">
+        <h2>Atributos Base</h2>
+        <div class="atributos-grid">
+            <div>
+                <label>💪 Poder:</label>
+                <input name="system.atributos.poder.valor_bruto" type="text" value="{{system.atributos.poder.valor_bruto}}" data-dtype="Number"/>
+            </div>
+            <div>
+                <label>🛡️ Vigor:</label>
+                <input name="system.atributos.vigor.valor_bruto" type="text" value="{{system.atributos.vigor.valor_bruto}}" data-dtype="Number"/>
+            </div>
+        </div>
+    </section>
+</form>
