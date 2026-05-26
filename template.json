@@ -3,23 +3,24 @@
     "types": ["personagem", "npc"],
     "personagem": {
       "atributos": {
-        "poder": { "valor_bruto": 0 },
-        "vigor": { "valor_bruto": 0 },
-        "velocidade": { "valor_bruto": 0 },
-        "magia": { "valor_bruto": 0 },
-        "precisao": { "valor_bruto": 0 },
-        "esquiva": { "valor_bruto": 0 },
-        "defesa_magica": { "valor_bruto": 0 }
+        "poder": { "valor_bruto": 0, "bonus": 0 },
+        "vigor": { "valor_bruto": 0, "bonus": 0 },
+        "velocidade": { "valor_bruto": 0, "bonus": 0 },
+        "magia": { "valor_bruto": 0, "bonus": 0 },
+        "precisao": { "valor_bruto": 0, "bonus": 0 },
+        "esquiva": { "valor_bruto": 0, "bonus": 0 },
+        "defesa_magica": { "valor_bruto": 0, "bonus": 0 }
       },
       "status": {
-        "pv": { "value": 0, "max": 0 },
-        "pm": { "value": 0, "max": 0 },
-        "karma": { "positivo": 0, "negativo": 0 }
+        "pv": { "value": 0, "max": 0, "fixo_classe": 0 },
+        "pm": { "value": 0, "max": 0, "fixo_classe": 0 },
+        "defesas": { "nd_esquiva": 8, "nd_defesa_magica": 8 }
       },
       "biografia": {
         "classe": "",
         "arquetipo": "",
-        "afinidade": ""
+        "afinidade": "",
+        "nivel": 1
       }
     },
     "npc": {
