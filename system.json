@@ -1,0 +1,38 @@
+{
+  "id": "chronosfera",
+  "title": "Chronosfera RPG",
+  "description": "Sistema oficial do Chronosfera RPG. Motor de Karma e Viagens Temporais.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "Angelo",
+      "roles": ["Author", "Developer"]
+    }
+  ],
+  "esmodules": ["module/chronosfera.mjs"],
+  "styles": ["css/chronosfera.css"],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "personagem": {},
+      "npc": {}
+    },
+    "Item": {
+      "tech": {},
+      "equipamento": {},
+      "consumivel": {}
+    }
+  },
+  "manifest": "https://raw.githubusercontent.com/SEU_USUARIO/chronosfera-rpg-system/main/system.json",
+  "download": "https://github.com/SEU_USUARIO/chronosfera-rpg-system/releases/latest/download/chronosfera-rpg-system.zip"
+}
