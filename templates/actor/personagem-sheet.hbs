@@ -1,27 +1,95 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <header class="sheet-header">
-        <h1>
-            <input name="name" type="text" value="{{actor.name}}" placeholder="Nome do Personagem"/>
-        </h1>
-        <div class="header-status">
-            <label>PV:</label>
-            <input name="system.status.pv.value" type="text" value="{{system.status.pv.value}}" data-dtype="Number"/>
-            <span> / </span>
-            <input name="system.status.pv.max" type="text" value="{{system.status.pv.max}}" data-dtype="Number"/>
+    <header style="display: flex; gap: 20px; border-bottom: 2px solid #333; padding-bottom: 15px; margin-bottom: 15px;">
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="120" width="120" style="border: 3px solid #111; border-radius: 4px;"/>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 10px;">
+            <input name="name" type="text" value="{{actor.name}}" style="font-size: 28px; font-weight: bold; width: 100%; border: none; background: transparent;"/>
+            
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <label>Classe:</label>
+                <input name="system.biografia.classe" type="text" value="{{system.biografia.classe}}" style="width: 120px;"/>
+                <label>Nível:</label>
+                <input name="system.biografia.nivel" type="text" value="{{system.biografia.nivel}}" data-dtype="Number" style="width: 40px; text-align: center;"/>
+            </div>
         </div>
     </header>
 
-    <section class="sheet-body">
-        <h2>Atributos Base</h2>
-        <div class="atributos-grid">
-            <div>
-                <label>💪 Poder:</label>
-                <input name="system.atributos.poder.valor_bruto" type="text" value="{{system.atributos.poder.valor_bruto}}" data-dtype="Number"/>
+    <div style="display: flex; gap: 30px;">
+        <div style="flex: 1; background: rgba(0,0,0,0.03); padding: 15px; border-radius: 4px;">
+            <h3>🎭 Atributos de Karma</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="text-align: left; border-bottom: 1px solid #ccc;">
+                        <th>Atributo</th>
+                        <th style="text-align: center;">Bruto</th>
+                        <th style="text-align: center;">Bônus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>💪 Poder</strong></td>
+                        <td style="text-align: center;"><input name="system.atributos.poder.valor_bruto" type="text" value="{{system.atributos.poder.valor_bruto}}" data-dtype="Number" style="width: 50px; text-align: center;"/></td>
+                        <td style="text-align: center; font-size: 16px; color: blue;">+{{system.atributos.poder.bonus}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🛡️ Vigor</strong></td>
+                        <td style="text-align: center;"><input name="system.atributos.vigor.valor_bruto" type="text" value="{{system.atributos.vigor.valor_bruto}}" data-dtype="Number" style="width: 50px; text-align: center;"/></td>
+                        <td style="text-align: center; font-size: 16px; color: blue;">+{{system.atributos.vigor.bonus}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>⚡ Velocidade</strong></td>
+                        <td style="text-align: center;"><input name="system.atributos.velocidade.valor_bruto" type="text" value="{{system.atributos.velocidade.valor_bruto}}" data-dtype="Number" style="width: 50px; text-align: center;"/></td>
+                        <td style="text-align: center; font-size: 16px; color: blue;">+{{system.atributos.velocidade.bonus}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🔮 Magia</strong></td>
+                        <td style="text-align: center;"><input name="system.atributos.magia.valor_bruto" type="text" value="{{system.atributos.magia.valor_bruto}}" data-dtype="Number" style="width: 50px; text-align: center;"/></td>
+                        <td style="text-align: center; font-size: 16px; color: blue;">+{{system.atributos.magia.bonus}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🎯 Precisão</strong></td>
+                        <td style="text-align: center;"><input name="system.atributos.precisao.valor_bruto" type="text" value="{{system.atributos.precisao.valor_bruto}}" data-dtype="Number" style="width: 50px; text-align: center;"/></td>
+                        <td style="text-align: center; font-size: 16px; color: blue;">+{{system.atributos.precisao.bonus}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>💨 Esquiva</strong></td>
+                        <td style="text-align: center;"><input name="system.atributos.esquiva.valor_bruto" type="text" value="{{system.atributos.esquiva.valor_bruto}}" data-dtype="Number" style="width: 50px; text-align: center;"/></td>
+                        <td style="text-align: center; font-size: 16px; color: blue;">+{{system.atributos.esquiva.bonus}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🌌 Defesa Mágica</strong></td>
+                        <td style="text-align: center;"><input name="system.atributos.defesa_magica.valor_bruto" type="text" value="{{system.atributos.defesa_magica.valor_bruto}}" data-dtype="Number" style="width: 50px; text-align: center;"/></td>
+                        <td style="text-align: center; font-size: 16px; color: blue;">+{{system.atributos.defesa_magica.bonus}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+            <div style="border: 1px solid #aaa; padding: 15px; border-radius: 4px; background: #fff5f5;">
+                <h3>❤️ Pontos de Vida (PV)</h3>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <input name="system.status.pv.value" type="text" value="{{system.status.pv.value}}" data-dtype="Number" style="width: 60px; text-align: center; font-size: 18px;"/>
+                    <span style="font-size: 20px;">/</span>
+                    <span style="font-size: 20px; font-weight: bold;">{{system.status.pv.max}}</span>
+                    <span style="font-size: 12px; color: #666; margin-left: 10px;">(Fixo Classe: <input name="system.status.pv.fixo_classe" type="text" value="{{system.status.pv.fixo_classe}}" data-dtype="Number" style="width: 40px; text-align: center;"/>)</span>
+                </div>
             </div>
-            <div>
-                <label>🛡️ Vigor:</label>
-                <input name="system.atributos.vigor.valor_bruto" type="text" value="{{system.atributos.vigor.valor_bruto}}" data-dtype="Number"/>
+
+            <div style="border: 1px solid #aaa; padding: 15px; border-radius: 4px; background: #f5f5ff;">
+                <h3>✨ Pontos de Magia (PM)</h3>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <input name="system.status.pm.value" type="text" value="{{system.status.pm.value}}" data-dtype="Number" style="width: 60px; text-align: center; font-size: 18px;"/>
+                    <span style="font-size: 20px;">/</span>
+                    <span style="font-size: 20px; font-weight: bold;">{{system.status.pm.max}}</span>
+                    <span style="font-size: 12px; color: #666; margin-left: 10px;">(Fixo Classe: <input name="system.status.pm.fixo_classe" type="text" value="{{system.status.pm.fixo_classe}}" data-dtype="Number" style="width: 40px; text-align: center;"/>)</span>
+                </div>
+            </div>
+
+            <div style="border: 1px solid #aaa; padding: 15px; border-radius: 4px; background: #fcfaff; display: flex; flex-direction: column; gap: 10px;">
+                <h3>🛡️ Defesas Passivas</h3>
+                <div><strong>🎯 ND Esquiva Base:</strong> <span style="font-size: 18px; font-weight: bold; color: green;">{{system.status.defesas.nd_esquiva}}</span></div>
+                <div><strong>🌌 ND Defesa Mágica:</strong> <span style="font-size: 18px; font-weight: bold; color: purple;">{{system.status.defesas.nd_defesa_magica}}</span></div>
             </div>
         </div>
-    </section>
+    </div>
 </form>
