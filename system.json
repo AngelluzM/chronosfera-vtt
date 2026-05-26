@@ -35,5 +35,5 @@
   },
   "url": "https://github.com/AngelluzM/chronosfera-vtt",
   "manifest": "https://raw.githubusercontent.com/AngelluzM/chronosfera-vtt/main/system.json",
-  "download": "https://github.com/AngelluzM/chronosfera-vtt/archive/refs/heads/main.zip"
+  "download": "https://github.com/AngelluzM/chronosfera-vtt/releases/download/v0.1.0/chronosfera-vtt.zip"
 }
