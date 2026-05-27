@@ -2,7 +2,7 @@
   "id": "chronosfera-vtt",
   "title": "Chronosfera RPG",
   "description": "Sistema nativo oficial do Chronosfera RPG. Desenvolvido com Motor de Karma (2d12) e progressão baseada em Fibonacci.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
@@ -14,7 +14,7 @@
     }
   ],
   "esmodules": ["module/chronosfera.mjs"],
-  "styles": ["css/chronosfera.css"],
+  "styles": [],
   "languages": [
     {
       "lang": "pt-BR",
@@ -35,5 +35,5 @@
   },
   "url": "https://github.com/AngelluzM/chronosfera-vtt",
   "manifest": "https://github.com/AngelluzM/chronosfera-vtt/releases/latest/download/system.json",
-  "download": "https://github.com/AngelluzM/chronosfera-vtt/releases/download/v0.1.0/chronosfera-vtt.zip"
+  "download": "https://github.com/AngelluzM/chronosfera-vtt/releases/download/v0.1.1/chronosfera-vtt.zip"
 }
